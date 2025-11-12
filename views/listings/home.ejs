@@ -1,0 +1,95 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+    <h2 class="heading">Dashboard</h2>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 dashboard mt-3">
+
+
+    <!-- Calories -->
+    <div class="card col">
+          <h5 class="card-title "><i class="fa-solid fa-fire"></i>  Calories Burned</h5>
+          <p class="card-text"><span class="cal"><%=allListings[0].calories%></span>kcal</p>
+          <h5 class="card-title "><i class="fa-solid fa-road"></i>  Distance Covered</h5>
+          <p class="card-text"><span class="cal"><%=allListings[0].steps*0.75%></span>meters</p>
+      </div>
+
+<!-- Water intake -->
+      <div class="card col" >
+          <h5 class="card-title"><i class="fa-solid fa-droplet"></i>  Water Intake</h5>        
+          <p class="card-text"><span class="cal"><%=allListings[0].water%>/8</span>glasses
+            <form action="/home/water?_method=PUT" method="POST">
+                <label for="waterRange">Glasses of water: 
+                  <span id="waterValue"><%=allListings[0].water%></span> glasses
+                </label>
+                
+                <input  type="range" min="0" max="8" step="1" name="water" value=<%=allListings[0].water%>
+                  id="waterRange" value="3" oninput="document.getElementById('waterValue').innerText = this.value">
+                
+                <button class="btn btn-primary">Update</button>
+              </form></p>
+      </div>
+
+<!-- Sleep -->
+      <div class="card col">
+          <h5 class="card-title"><i class="fa-solid fa-bed"></i>  Sleep Tracker</h5>
+          <p class="card-text"><span class="cal"><%=allListings[0].sleep%>/6</span>hours
+            <form action="/home/sleep?_method=PUT" method="POST">
+                <label for="sleepRange">Hours of Sleep: 
+                  <span id="sleepValue"><%=allListings[0].sleep%></span> hrs
+                </label>
+                
+                <input  type="range" min="0" max="6" step="1" name="sleep" value=<%=allListings[0].sleep%>
+                  id="sleepRange" value="3" oninput="document.getElementById('sleepValue').innerText = this.value">
+                
+                <button class="btn btn-primary">Update</button>
+              </form>
+              </p>
+      </div>
+
+
+      <!-- BMI -->
+      <div class="card col">
+        <h5 class="card-title">BMI</h5>
+        <form action="/home/bmi?_method=PUT" method="POST">
+        <label for="height">HEIGHT:</label>
+        <input type="number" id="height" name="height" placeholder="Input height(in CM)"><br>
+        <label for="height">WEIGHT: </label>
+        <input type="number" id="weight" name="weight" placeholder="Input weight(in KG)"><br><br>
+        <button class="btn btn-primary">Calculate</button>
+    </form>
+    <br>
+        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuemin="10" aria-valuemax="40" style="height: 20px">
+            <div class="progress-bar" style="width:80%">
+            </div>          
+            </div><p class="category"></p>
+    </div>
+
+
+    <!-- Chart -->
+    <div class="card col abc p-3">
+        <h5 class="card-title">Steps Count</h5>
+        <div id="chart-container">
+            <canvas id="donutChart"></canvas>
+            <div id="chart-text"><i class="fa-solid fa-person-walking"></i><br><%= allListings[0].steps %></div>
+        </div><br>  
+        <form action="/home/steps?_method=PUT" method="POST">
+        <input type="number" id="stepsInput" name="steps" placeholder="Enter your steps" min="0" class="form-control">
+        <button class="btn btn-primary mt-2">Update Steps</button>
+        </form>
+    </div>
+
+    <!-- Tasks -->
+    <div class="card col">
+        <h5 class="card-title">Add new Workout</h5>
+        <form action="/home/workout?_method=PUT" method="POST">
+        <textarea rows="13" cols="33" name="workout" placeholder="Write your tasks here" class="workout"><%= allListings[0].workout %></textarea>
+        <button class="btn btn-primary mt-2">Add Workout</button>
+        </form>
+    </div>
+    </div>
+    
+<!-- DATA -->
+    <script>
+        const data1 = "<%= allListings[0].steps %>";
+        const data2 = "<%= allListings[0].bmi %>"
+      </script>
+</body>

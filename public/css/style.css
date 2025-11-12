@@ -1,0 +1,140 @@
+/* Cards */
+.dashboard{
+    margin-left: 100px !important;
+}
+.card{
+    width:300px !important;
+    margin-right: 4rem !important;
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(0, 0, 0, 0.3);
+}
+.card-title{
+    color:darkblue !important;
+}
+.heading{
+    margin-left: 50px;
+    margin-top: 5px;;
+}
+
+/* Navbar */
+.navbar{
+    height:5rem;
+    background-color: white;
+    z-index: 1;
+}
+.fa-heart-pulse{
+    color:#fe424d !important;
+    font-size: 2rem;
+}
+.nav-link{
+    color:#222222 !important;
+}
+.navbar-nav{
+    margin-left: 10px;
+}
+
+/* Chart */
+#chart-container {
+    position: relative;
+    width: 100%; /* Responsive width */
+    max-width: 250px; /* Limits size */
+    height: 250px; /* Fixed height */
+    margin: auto;
+}
+
+/* Text inside the donut */
+#chart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: bold;
+    color:black;
+}
+
+/* Full-width input & button */
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.fa-person-walking{
+    font-size: 2rem !important;
+}
+
+/* BMI */
+.category{
+    text-align: center;
+}
+.update{
+    background-color: rgba(0, 79, 238, 0.671) !important;
+}
+
+/* Calories */
+.cal{
+    font-size: 3rem;
+    margin-left: 1rem;
+    font-weight: 500;
+}
+
+/* Contact */
+.contact-page {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .contact-page .contact-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-page .form-label {
+    font-weight: 500;
+  }
+  
+  .contact-page footer {
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+
+  /* Blogs */
+  .blogs-page {
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .blogs-page .blogs-container {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .blogs-page .card-title {
+    color: #198754;
+    font-weight: 600;
+  }
+  
+  .blogs-page .card-text {
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .fa-fire{
+    color:red;
+  }
+
+  .fa-droplet{
+    color:skyblue
+  }
+
+  .fa-bed,.fa-road{
+    color:black;
+  }
+
+
